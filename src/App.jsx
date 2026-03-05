@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast"
 import ScorllTop from "./compontsheader/ScorllTop"
 import { AnimatePresence } from "framer-motion"
 import CategroyPage from "./page/CategoryPage/CategroyPage"
-import SearchRestults from "./page/searchRestults"
+import SearchRestults from "./page/SearchRestults"
 import Favorites from "./page/favorites/Favorites"
 function App() {
   return (
