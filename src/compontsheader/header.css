@@ -157,6 +157,15 @@ fill: var(--bg_color);
 .btn_header .nav_links li a{
     color: var(--white_color);
 }
+.btn_header .mobile_nav_toggle{
+    display: none;
+    background: transparent;
+    color: var(--white_color);
+    cursor: pointer;
+}
+.btn_header .mobile_nav_toggle svg{
+    font-size: 22px;
+}
 .btn_header .sign_regs_icon{
     display: flex;
     gap: 20px;
@@ -198,4 +207,121 @@ font-size: 22px;
 }
 .suggestions li img{
     width: 30px;
+}
+
+@media (max-width: 1100px) {
+    .top_header .search_box {
+        width: 420px;
+    }
+
+    .top_header .search_box input {
+        width: calc(100% - 60px);
+    }
+
+    .btn_header .nav {
+        gap: 20px;
+    }
+
+    .btn_header .nav_links li {
+        padding: 0 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top_header .container {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .top_header .logo {
+        width: 130px;
+    }
+
+    .top_header .header_icons .icon svg {
+        font-size: 25px;
+    }
+
+    .top_header .search_box {
+        order: 3;
+        width: 100%;
+    }
+
+    .top_header .search_box input {
+        width: calc(100% - 60px);
+    }
+
+    .btn_header .container {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .btn_header .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        height: auto;
+    }
+
+    .btn_header .category_nav {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .btn_header .category_nav .category_btn {
+        height: 44px;
+    }
+
+    .btn_header .nav_links {
+        display: none;
+        width: 100%;
+        overflow: hidden;
+        background: #0079ca;
+        border-radius: 8px;
+        padding: 6px 0;
+    }
+
+    .btn_header .nav_links.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn_header .nav_links li {
+        height: auto;
+        padding: 0;
+    }
+
+    .btn_header .nav_links li a {
+        display: block;
+        width: 100%;
+        padding: 11px 14px;
+    }
+
+    .btn_header .mobile_nav_toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 6px;
+    }
+
+    .btn_header .sign_regs_icon {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .top_header .header_icons {
+        gap: 16px;
+    }
+
+    .btn_header .nav_links li {
+        padding: 0;
+    }
+
+    .suggestions li span {
+        font-size: 13px;
+    }
 }

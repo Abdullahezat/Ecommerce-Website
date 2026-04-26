@@ -4,6 +4,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom';
 import { PiSignInBold } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa6";
+import { FaBars, FaXmark } from "react-icons/fa6";
 
 const NavLinks =[
     {title:"Home",link:"/"},
@@ -17,10 +18,12 @@ function BtmHeader() {
     const [categories,setCategories]=useState([]);
 
     const[isCategoryOpen,setIsCategoryOpen]= useState(false)
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
 
     useEffect(()=>{
         setIsCategoryOpen(false)
+        setIsMobileNavOpen(false)
     },[location])
 
 
@@ -48,9 +51,21 @@ function BtmHeader() {
                 </div>
             </div>  
 
-            <div className='nav_links'>
+            <button
+                type="button"
+                className="mobile_nav_toggle"
+                onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                aria-label="Toggle navigation menu"
+                aria-expanded={isMobileNavOpen}
+            >
+                {isMobileNavOpen ? <FaXmark /> : <FaBars />}
+            </button>
+
+            <div className={`nav_links ${isMobileNavOpen ? "open" : ""}`}>
                 {NavLinks.map((item)=>(
-                    <li  key={item.slug} className={location.pathname===item.link?"active":""}><Link to={item.link}>{item.title} </Link></li>
+                    <li key={item.link} className={location.pathname===item.link?"active":""}>
+                        <Link to={item.link}>{item.title}</Link>
+                    </li>
                 ))}
 
             </div>

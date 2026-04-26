@@ -26,14 +26,21 @@ function SlideProducts({data ,title}) {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          slidesPerView={5}
+          spaceBetween={12}
+          slidesPerView={1}
+          breakpoints={{
+            480: { slidesPerView: 2, spaceBetween: 12 },
+            768: { slidesPerView: 3, spaceBetween: 14 },
+            1024: { slidesPerView: 4, spaceBetween: 16 },
+            1280: { slidesPerView: 5, spaceBetween: 18 },
+          }}
           navigation={true}
           modules={[ Autoplay,Navigation]}
           className="mySwiper">
 
             {data.map((item)=>{
               return(
-                <SwiperSlide><Products item={item} /></SwiperSlide>                
+                <SwiperSlide key={item.id}><Products item={item} /></SwiperSlide>                
               )
             })}
 

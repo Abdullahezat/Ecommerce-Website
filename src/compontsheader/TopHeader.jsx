@@ -10,7 +10,7 @@ function TopHeader() {
     return (
     <div className='top_header'>
         <div className="container">
-            <Link className='logo' to="/"><img src="/img/ChatGPT Image Feb 25, 2026, 02_25_04 AM.png" alt="logo" /></Link>
+            <Link className='logo' to="/"><img src={`${import.meta.env.BASE_URL}img/ChatGPT Image Feb 25, 2026, 02_25_04 AM.png`} alt="logo" /></Link>
 
             <SerachBox/>
 
